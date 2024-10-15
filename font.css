@@ -1,0 +1,15 @@
+.black-big-font {
+  font-size: 31px;
+  color: black;
+  overflow: hidden;
+}
+.black-bmiddle-font {
+  font-size: 25px;
+  color: black;
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

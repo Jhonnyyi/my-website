@@ -12,72 +12,98 @@
     <link rel="stylesheet" type="text/css" href="page-list.css" />
     <link rel="stylesheet" type="text/css" href="a.css" />
     <style></style>
+    <style>
+        .header {
+          background-color: #F1F1F1;
+          /*text-align: center;*/
+          padding: 20px;
+        }
+        .this-div{
+          background-image: -webkit-linear-gradient(left, #f10a0a, #E6D205, #24ee09, #10e4f3, #24ee09,#e6d205);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-background-size: 200% 100%;
+            -webkit-animation:  maskedAnimation 4s infinite linear;
+            font-size: 18px;
+        }
+        
+        @keyframes maskedAnimation {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+              background-position: -100% 0;
+          }
+        }
+        /* 导航条 */
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        /* 导航链接 */
+        .topnav a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        /* 链接 - 修改颜色 */
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+    }
+    .footer {
+      background-color: #F1F1F1;
+      text-align: center;
+      padding: 10px;
+    }
+      </style>
   </head>
-  <body class="background" aria-hidden="true" style="top: 0px">
-    <haeder class="blue-top-border">
-      <a target="_blank" href="https://resolutely-resist-ccs-git-hub.github.io/my-website/">
-        <img
-          src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/icon.png"
-          alt="loading icon..."
-          width="36"
-          height="36"
-          class="dis-line topicon"
-        />
-      </a>
-      <div class="dis-line about-bt">
-        <div>
-          <a
-            target="_blank"
-            href="https://resolutely-resist-ccs-git-hub.github.io/about"
-            class="black-big-font"
-            >关于此网站</a
-          >
+  <body  aria-hidden="true" style="top: 0px">
+    <div class="header this-div">
+        <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/"><img src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/icon.png" alt="" height="50" width="50"></a>
+            <font size="7" color="#">  
+                让我们一起互膜orz%%%
+            </font>        
+    </div>
+    <div class="topnav">
+        <a href="https://resolutely-resist-ccs-git-hub.github.io/about">关于此网站</a><a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/">页面</a>
+        
+ 
+    </div>
+       <div class="this-div">
+        <font size="6" color="#">  
+            这是页面系统
+        </font> 
+        </div>    
+        <div class="page-list">
+            <div></div>
+            <a
+              target="_blank"
+              href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/P9438/"
+              class="black-big-font"
+            >
+              <font color="#F2F2F2">解密赛</font>
+            </a>
+          </div> 
         </div>
-      </div>
-      <div class="dis-line">
-        <div>
-          <div
-            target="_blank"
-            class="black-big-font"
-            >这里是页面系统
-          </div>
-        </div>
-      </div>
-    </haeder>
-    <div class="side-bar">
-      <div class="side-bar-block">
-        <a
-          target="_blank"
-          href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/P9438/"
-          class="black-bmiddle-font"
-          >解密赛</a
-        >
-      </div>
-    </div>
-    <div class="top-blank"></div>
-    <div class="main">
-      <div class="page-list">
-        <div></div>
-        <a
-          target="_blank"
-          href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/P9438/"
-          class="black-big-font"
-        >
-          解密赛
-        </a>
-      </div> 
-    </div>
-    <div class="main">
-      <div class="page-list">
-        <div></div>
-        <a
-          target="_blank"
-          href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/P1919/"
-          class="black-big-font"
-        >
-          猜数字小游戏
-        </a>
-      </div> 
-    </div>
+        
+          <div class="page-list">
+            <div></div>
+            <a
+              target="_blank"
+              href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/P1919/"
+              class="black-big-font"
+            >
+              <font COLOR="F2F2F2">猜数字小游戏</font>
+            </a>
+        </div>     
+        <div class="footer this-div">
+            stosto让我们一起互膜orzorz%%%
+          </div>   
   </body>
 </html>

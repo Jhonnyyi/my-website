@@ -4,173 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高级 Markdown 编辑器</title>
+    <title>Enhanced Markdown to HTML Converter</title>
     <!-- Import highlight.js styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        #markdownInput {
-            width: 100%;
-            height: 300px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            font-size: 16px;
-        }
-
-        #htmlOutput {
-            width: 100%;
-            border: 1px solid #ccc;
-            padding: 10px;
-            min-height: 300px;
-            background-color: #f9f9f9;
-        }
-
-      .toolbar {
-            background-color: #f2f2f2;
-            padding: 5px;
-            border-bottom: 1px solid #ccc;
-        }
-
-      .toolbar button {
-            margin-right: 5px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="toolbar">
-        <button onclick="makeBold()">加粗</button>
-        <button onclick="makeItalic()">斜体</button>
-        <button onclick="makeLink()">链接</button>
-        <button onclick="makeHeading()">标题</button>
-        <button onclick="makeUnorderedList()">无序列表</button>
-        <button onclick="makeOrderedList()">有序列表</button>
-        <button onclick="makeCodeBlock()">代码块</button>
-        <button onclick="insertImage()">插入图片</button>
-    </div>
-    <textarea id="markdownInput" oninput="convertMarkdown()"></textarea>
-    <div id="htmlOutput"></div>
+    <h1>markdown转换器</h1>
+    请输入markdown：
+    <p></p>
+    <textarea id="markdownInput">
 
-    <script>
-        function convertMarkdown() {
-            const markdown = document.getElementById('markdownInput').value;
-            const html = marked.parse(markdown);
-            document.getElementById('htmlOutput').innerHTML = html;
-            // Highlight code blocks
-            hljs.highlightAll();
-        }
+</textarea>
+<p></p>
+<button onclick="convertMarkdown()">转换！</button>
+<div id="htmlOutput"></div>
+<pre>
+       
 
-        function makeBold() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const selectedText = textarea.value.substring(start, end);
-            const boldText = `**${selectedText}**`;
-            textarea.value = textarea.value.substring(0, start) + boldText + textarea.value.substring(end);
-            textarea.setSelectionRange(start + 2, end + 2);
-            convertMarkdown();
-        }
 
-        function makeItalic() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const selectedText = textarea.value.substring(start, end);
-            const italicText = `*${selectedText}*`;
-            textarea.value = textarea.value.substring(0, start) + italicText + textarea.value.substring(end);
-            textarea.setSelectionRange(start + 1, end + 1);
-            convertMarkdown();
-        }
 
-        function makeLink() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const selectedText = textarea.value.substring(start, end);
-            const link = prompt('输入链接 URL：');
-            if (link) {
-                const linkText = `[${selectedText}](${link})`;
-                textarea.value = textarea.value.substring(0, start) + linkText + textarea.value.substring(end);
-                textarea.setSelectionRange(start + 1, end + link.length + 4);
-                convertMarkdown();
-            }
-        }
-
-        function makeHeading() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const selectedText = textarea.value.substring(start, end);
-            const headingLevel = prompt('输入标题级别（1-6）：');
-            if (headingLevel && headingLevel >= 1 && headingLevel <= 6) {
-                const headingText = `#${'#'.repeat(headingLevel)} ${selectedText}`;
-                textarea.value = textarea.value.substring(0, start) + headingText + textarea.value.substring(end);
-                textarea.setSelectionRange(start + headingLevel + 2, end + headingLevel + 2);
-                convertMarkdown();
-            }
-        }
-
-        function makeUnorderedList() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const selectedText = textarea.value.substring(start, end).split('\n');
-            let listItems = '';
-            for (let i = 0; i < selectedText.length; i++) {
-                listItems += `- ${selectedText[i]}\n`;
-            }
-            textarea.value = textarea.value.substring(0, start) + listItems + textarea.value.substring(end);
-            textarea.setSelectionRange(start + listItems.length, end + listItems.length);
-            convertMarkdown();
-        }
-
-        function makeOrderedList() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const selectedText = textarea.value.substring(start, end).split('\n');
-            let listItems = '';
-            for (let i = 0; i < selectedText.length; i++) {
-                listItems += `${i + 1}. ${selectedText[i]}\n`;
-            }
-            textarea.value = textarea.value.substring(0, start) + listItems + textarea.value.substring(end);
-            textarea.setSelectionRange(start + listItems.length, end + listItems.length);
-            convertMarkdown();
-        }
-
-        function makeCodeBlock() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const selectedText = textarea.value.substring(start, end);
-            const codeBlock = `\`\`\`\n${selectedText}\n\`\`\`\n`;
-            textarea.value = textarea.value.substring(0, start) + codeBlock + textarea.value.substring(end);
-            textarea.setSelectionRange(start + codeBlock.length, end + codeBlock.length);
-            convertMarkdown();
-        }
-
-        function insertImage() {
-            const textarea = document.getElementById('markdownInput');
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const imageUrl = prompt('输入图片 URL：');
-            if (imageUrl) {
-                const imageMarkdown = `![描述文字](${imageUrl})`;
-                textarea.value = textarea.value.substring(0, start) + imageMarkdown + textarea.value.substring(end);
-                textarea.setSelectionRange(start + imageMarkdown.length, end + imageMarkdown.length);
-                convertMarkdown();
-            }
-        }
-    </script>
-</body>
-
-</html>
+</pre>
+<pre id="htmlSource"></pre>
+<script>
+    function convertMarkdown() {
+        const markdown = document.getElementById('markdownInput').value;
+        const html = marked.parse(markdown);
+        document.getElementById('htmlOutput').innerHTML = html;
+        document.getElementById('htmlSource').textContent = html;
+        // Highlight code blocks
+        hljs.highlightAll();
+    }
+</script>

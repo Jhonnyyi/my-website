@@ -1,0 +1,24 @@
+.page-list {
+  background-color: rgb(76, 189, 246);
+  height: 40px;
+  width: 800px;
+  z-index: 4;
+  border: 2px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  font-size: 30px;
+  padding-top: 10px;
+}
+.page-list2 {
+  background-color: rgb(30, 165, 183);
+  height: 40px;
+  width: 800px;
+  z-index: 4;
+  border: 2px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  font-size: 30px;
+  padding-top: 10px;
+}

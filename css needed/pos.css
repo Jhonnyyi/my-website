@@ -1,0 +1,9 @@
+.to-right {
+  position: absolute;
+  right: 20px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test</title> 
-  <link rel="stylesheet" type="text/css" href="color_text.css" />
+  <title>多个可拖动悬浮板块与鼠标跟随背景</title>
   <style>
-    .header {
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    /* 鼠标跟随背景元素样式 */
+ .background {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      pointer-events: none;
+      background-image: url('https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/header.png');
+      background-size: 50% auto;
+      background-position: center;
+      background-attachment: fixed;
+      z-index: -1;
+    }
+
+    /* 悬浮板块样式 */
+ .floating-panel {
+      position: fixed;
+      background-color: rgba(0, 255, 255, 0.8);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+    
+      text-align: center;
+      opacity: 0.8;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+ .floating-panel h2 {
+      margin-top: 0;
+    }
+    .color-mask-div {
+  background-image: -webkit-linear-gradient(
+    left,
+    #f10a0a,
+    #e6d205,
+    #24ee09,
+    #10e4f3,
+    #24ee09,
+    #e6d205
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-background-size: 200% 100%;
+  -webkit-animation: maskedAnimation 0.5s infinite linear;
+  font-size: 18px;
+}
+
+@keyframes maskedAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+.header {
       background-color: #F1F1F1;
       /*text-align: center;*/
       padding: 20px;
@@ -37,23 +98,101 @@
   text-align: center;
   padding: 10px;
 }
+
   </style>
 </head>
+
 <body>
-  <div class="header color-mask-div">
-      <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/"><img src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/icon.png" alt="" height="50" width="50"></a>
-          <font size="7" color="#">  
-              让我们一起互膜orz%%%
-          </font>        
+  <!-- 鼠标跟随背景元素 -->
+  <div class="background"></div>
+
+  <!-- 多个悬浮板块 -->
+  <div class="floating-panel" data-position="xf1">
+    <h1 color="#000000">你好，这里是rain_x3创建的一个小网站,由“坚决抵抗ccs！”团队维护</h1>
+    <h3></h3>
+    <input type="color" class="color-picker" value="#ffffff">
   </div>
-  <div class="topnav">
-      <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/about">关于此网站</a><a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/">页面</a>
+  <div class="floating-panel" data-position="xf2">
+    <div class="header color-mask-div">
+        <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/"><img src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/icon.png" alt="" height="50" width="50"></a>
+            <font size="7" color="#">  
+                让我们一起互膜orz%%%
+            </font>        
+    </div>
+    <div class="topnav">
+        <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/about">关于此网站</a><a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/">页面</a>
+    </div>
+    
+   
+    <p></p>
+    <div class="footer color-mask-div">
+      stosto让我们一起互膜orzorz%%%
+    </div>
   </div>
-  
-  <img src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/header.png" alt="">
-  <p></p>
-  <div class="footer color-mask-div">
-    stosto让我们一起互膜orzorz%%%
+
+  <div class="floating-panel" data-position="xf3">
+    <img src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/header.png" alt="">
   </div>
+
+  <script>
+    // 获取背景元素和所有悬浮板块元素
+    const background = document.querySelector('.background');
+    const floatingPanels = document.querySelectorAll('.floating-panel');
+
+    // 鼠标移动事件处理函数
+    document.addEventListener('mousemove', function (e) {
+      const x = e.clientX;
+      const y = e.clientY;
+      background.style.transform = `translate(${(x-600) * 0.1}px, ${(y-600) * 0.1}px)`;
+    });
+    
+    // 设置每个悬浮板块的位置
+    floatingPanels.forEach(panel => {
+      const position = panel.dataset.position;
+      let top = '200px';
+      let left = '200px';
+      let bottom = 'auto';
+      let right = 'auto';
+
+      if (position === 'xf2') {
+        left = '100px';
+        top='400px';
+      } else if (position === 'xf3') {
+        left = '500px';
+        top='700px';     
+      }
+
+      panel.style.top = top;
+      panel.style.right = right;
+      panel.style.bottom = bottom;
+      panel.style.left = left;
+
+      // 使悬浮板块可拖动
+      let isDragging = false;
+      let startX, startY;
+
+      panel.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        startX = e.clientX - panel.offsetLeft;
+        startY = e.clientY - panel.offsetTop;
+      });
+
+      document.addEventListener('mousemove', function (e) {
+        if (isDragging) {
+          const newX = e.clientX - startX;
+          const newY = e.clientY - startY;
+          panel.style.left = newX + 'px';
+          panel.style.top = newY + 'px';
+        }
+      });
+
+      document.addEventListener('mouseup', function () {
+        isDragging = false;
+      });
+
+ 
+    });
+  </script>
 </body>
+
 </html>

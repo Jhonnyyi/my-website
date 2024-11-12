@@ -1,22 +1,215 @@
 <!DOCTYPE html>
-<html class="no-js" lang="zh-cn">
-  <head>
-    <title>让我们一起互膜orz%%%</title>
-  </head>
-  <body>
-    <span>
-      <div>
-        <font size="9" color="green">关于此网站</font>
-      </div>
-      网页想法/设计者:<a
-        href="https://www.luogu.com.cn/user/1208635#main"
-        rel="nofollow"
-        ><font size="5" color="purple">caochenkai</font></a
-      >
-      ,
-      <a href="https://www.luogu.com.cn/user/1208985#main" rel="nofollow"
-        ><font size="5" color="red">rain_x3</font></a
-      >
-    </span>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zindex</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    /* 鼠标跟随背景元素样式 */
+ .background {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      pointer-events: none;
+      background-image: url('https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/header.png');
+      background-size: 50% auto;
+      background-position: center;
+      background-attachment: fixed;
+      z-index: -1;
+    }
+
+    /* 悬浮板块样式 */
+ .floating-panel {
+      position: fixed;
+      background-color: rgba(0, 255, 255, 0.8);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+    
+      text-align: center;
+      opacity: 0.8;
+      z-index: 10;
+      cursor: pointer;
+    }
+    
+ .floating-panel h2 {
+      margin-top: 0;
+    }
+    .color-mask-div {
+  background-image: -webkit-linear-gradient(
+    left,
+    #f10a0a,
+    #e6d205,
+    #24ee09,
+    #10e4f3,
+    #24ee09,
+    #e6d205
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-background-size: 200% 100%;
+  -webkit-animation: maskedAnimation 0.5s infinite linear;
+  font-size: 18px;
+}
+
+@keyframes maskedAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+.header {
+      background-color: #F1F1F1;
+      /*text-align: center;*/
+      padding: 20px;
+    }
+    /* 导航条 */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    /* 导航链接 */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    /* 链接 - 修改颜色 */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+}
+.footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- 鼠标跟随背景元素 -->
+  <div class="background"></div>
+
+  <!-- 多个悬浮板块 -->
+  <div class="floating-panel" data-position="xf1">
+    <h1 color="#000000">关于此网站</h1>
+    <h3></h3>
+    <input type="color" class="color-picker" value="#ffffff">
+  </div>
+  <div class="floating-panel" data-position="xf2">
+    <div class="header color-mask-div">
+        <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/"><img src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/icon.png" alt="" height="50" width="50"></a>
+            <font size="7" color="#">  
+                让我们一起互膜orz%%%
+            </font>        
+    </div>
+    <div class="topnav">
+        <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/about">关于此网站</a><a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/">页面</a>
+    </div>
+    
+   
+    <p></p>
+    <div class="footer color-mask-div">
+      stosto让我们一起互膜orzorz%%%
+    </div>
+  </div>
+
+  <div class="floating-panel" data-position="xf3">
+    <h1 color="#000000">设计者/开发者：<a href="https://github.com/orgs/Resolutely-resist-CCS-git-hub/people/xhl-leo">xhl_leo</a>,<a href="https://github.com/orgs/Resolutely-resist-CCS-git-hub/people/rainx3">rain_x3</a>,<a href="https://github.com/orgs/Resolutely-resist-CCS-git-hub/people/littlecck">littlecck</a>,<a href="https://github.com/orgs/Resolutely-resist-CCS-git-hub/people/Jhonnyyi">Jhonnyyi</a></h1>
+    <h3></h3>
+  </div>
+  <div class="floating-panel" data-position="xf4">
+    <a href="https://github.com/Resolutely-resist-CCS-git-hub/my-website">
+    <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
+        <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+    </svg></a>
+    <a href="https://github.com/Resolutely-resist-CCS-git-hub/my-website" ><h2 >本页面使用github开发</h2></a>
+    <p></p>
+    <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/about" >关于</a> | <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/gengx">更新日志</a>
+  </div>
+  <script>
+    // 获取背景元素和所有悬浮板块元素
+    const background = document.querySelector('.background');
+    const floatingPanels = document.querySelectorAll('.floating-panel');
+   
+    // 鼠标移动事件处理函数
+    document.addEventListener('mousemove', function (e) {
+      const x = e.clientX;
+      const y = e.clientY;
+      background.style.transform = `translate(${(x-600) * 0.1}px, ${(y-600) * 0.1}px)`;
+    });
+    
+    // 设置每个悬浮板块的位置
+    floatingPanels.forEach(panel => {
+      const position = panel.dataset.position;
+      let top = '200px';
+      let left = '200px';
+      let bottom = 'auto';
+      let right = 'auto';
+
+      if (position === 'xf2') {
+        left = '100px';
+        top='400px';
+      } else if (position === 'xf3') {
+        left = '500px';
+        top='700px';     
+      }else if(position === 'xf4'){
+        left = '100px';
+        top='1000px';
+      }
+
+
+      panel.style.top = top;
+      panel.style.right = right;
+      panel.style.bottom = bottom;
+      panel.style.left = left;
+
+      // 使悬浮板块可拖动
+      let isDragging = false;
+      let startX, startY;
+
+      panel.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        startX = e.clientX - panel.offsetLeft;
+        startY = e.clientY - panel.offsetTop;
+      });
+
+      document.addEventListener('mousemove', function (e) {
+        if (isDragging) {
+          const newX = e.clientX - startX;
+          const newY = e.clientY - startY;
+          panel.style.left = newX + 'px';
+          panel.style.top = newY + 'px';
+        }
+      });
+
+      document.addEventListener('mouseup', function () {
+        isDragging = false;
+      });
+
+ 
+    });
+  </script>
+</body>
+
 </html>

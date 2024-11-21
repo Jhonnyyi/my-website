@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sfd{
+            background-color: #333;
+            color: aquamarine;
+            border: 5px ridge #000;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://cdn.luogu.com.cn/upload/image_hosting/8jbpndr6.png" alt="">
+    <div class="sfd" id="wsnd" style="white-space: normal; word-break: break-all; overflow: hidden;">
+
+    </div>
+    <script>
+        function shua(){
+            var x="";
+            for(var i=1;i<=500000;i++){
+                var xxx=Math.round(Math.random()*(11-1)+1);
+                x+=xxx.toString();
+            }
+            x+="IND6587364754646896589632453644647576879780753514253535457876907857463EX.HTML";
+            for(var i=1;i<=500000;i++){
+                var xxx=Math.round(Math.random()*(11-1)+1);
+                x+=xxx.toString();
+            }
+            document.getElementById("wsnd").innerHTML = x;            
+        }
+
+        shua();
+    </script>
+    
+</body>
+</html>

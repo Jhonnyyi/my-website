@@ -1,0 +1,40 @@
+.black-big-font {
+  font-size: 31px;
+  color: black;
+  overflow: hidden;
+}
+.black-bmiddle-font {
+  font-size: 25px;
+  color: black;
+  overflow: hidden;
+}
+.black-middle-font {
+  font-size: 20px;
+  color: black;
+  overflow: hidden;
+}
+.black-smiddle-font {
+  font-size: 15px;
+  color: black;
+  overflow: hidden;
+}
+.black-small-font {
+  font-size: 10px;
+  color: black;
+  overflow: hidden;
+}
+.black-smini-font {
+  font-size: 5px;
+  color: black;
+  overflow: hidden;
+}
+.black-mini-font {
+  font-size: 3px;
+  color: black;
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

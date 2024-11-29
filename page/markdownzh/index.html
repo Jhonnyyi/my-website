@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Markdown to HTML Converter</title>
+    <!-- Import highlight.js styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <h1>markdown转换器</h1>
+    请输入markdown：
+    <p></p>
+    <textarea id="markdownInput">
+
+</textarea>
+<p></p>
+<button onclick="convertMarkdown()">转换！</button>
+<div id="htmlOutput"></div>
+<pre>
+       
+
+
+
+</pre>
+<pre id="htmlSource"></pre>
+<script>
+    function convertMarkdown() {
+        const markdown = document.getElementById('markdownInput').value;
+        const html = marked.parse(markdown);
+        document.getElementById('htmlOutput').innerHTML = html;
+        document.getElementById('htmlSource').textContent = html;
+        // Highlight code blocks
+        hljs.highlightAll();
+    }
+</script>

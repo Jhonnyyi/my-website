@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字小游戏</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+      .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #ff0000;
+            color: rgb(255, 234, 0);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>猜数字小游戏</h1>
+  
+        <p>请输入一个 1 到 100 之间的数字：</p>
+        <input type="number" id="guessInput">
+        <button onclick="checkGuess()">点我提交</button>
+        <p id="message"></p>
+    </div>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            let guess = parseInt(document.getElementById("guessInput").value);
+            attempts++;
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                document.getElementById("message").textContent = "请输入一个有效的 1 到 100 之间の数字！";
+            } else if (guess === randomNumber) {
+                document.getElementById("message").textContent = `恭喜你，猜对了！你用了 ${attempts} 次尝试。`;
+            } else if (guess < randomNumber) {
+                document.getElementById("message").textContent = "太小了！";
+            } else {
+                document.getElementById("message").textContent = "太大了！";
+            }
+        }
+    </script>
+</body>
+</html>

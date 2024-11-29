@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>错误了</title>
+</head>
+<body>
+    <script>
+        let fruits = ['你不该来这！','你答对了一个错误的答案！', '错误了！', '谁让你到这来的？','哎呀，快走开！',':(']; 
+        var randomIntRound = Math.round(Math.random() * 5);
+       
+        var newDiv = document.createElement("div");
+ 
+             
+        newDiv.innerHTML = fruits[randomIntRound];
+  
+ 
+        document.body.appendChild(newDiv);
+    </script>
+</body>
+</html>

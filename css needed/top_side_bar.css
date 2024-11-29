@@ -1,0 +1,67 @@
+.blue-top-border {
+  background-color: blue;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  width: 660px;
+  height: 50px;
+  padding-bottom: 5px;
+  position: fixed;
+  z-index: 10;
+  border-radius: 10px;
+}
+.about-bt {
+  width: 160px;
+  height: 40px;
+  background-color: green;
+  z-index: 11;
+  border: 2px;
+  margin-right: 12px;
+  margin-top: 0px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  cursor: pointer;
+}
+.topicon {
+  border-radius: 18px;
+  margin-left: 7px;
+  margin-top: 6px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.to-right {
+  position: absolute;
+  right: 20px;
+}
+.git-dev {
+  margin-top: 10px;
+}
+.git-dev-link {
+  font-size: 25px;
+  color: black;
+}
+.side-bar {
+  background-color: blue;
+  height: 700px;
+  width: 50px;
+  position: fixed;
+  border: 5px;
+  border-color: black;
+  border-radius: 8px;
+  margin-top: 60px;
+}
+.side-bar-block {
+  background-color: grey;
+  height: 50px;
+  width: 50px;
+  margin-top: 0px;
+  border: 5px;
+  border-color: black;
+  border-radius: 8px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <style>
+    .header {
+      background-color: #F1F1F1;
+      /*text-align: center;*/
+      padding: 20px;
+    }
+    .this-div{
+      background-image: -webkit-linear-gradient(left, #f10a0a, #E6D205, #24ee09, #10e4f3, #24ee09,#e6d205);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation:  maskedAnimation 4s infinite linear;
+        font-size: 18px;
+    }
+    
+    @keyframes maskedAnimation {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+          background-position: -100% 0;
+      }
+    }
+    /* 导航条 */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    /* 导航链接 */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    /* 链接 - 修改颜色 */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+}
+.footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
+}
+  .jz{
+    text-align: center;
+  }
+  </style>
+</head>
+<body style="background-color: #0ef8e5;">
+  <div class="header this-div">
+      <a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/"><img src="https://resolutely-resist-ccs-git-hub.github.io/my-website/resource/icon.png" alt="" height="50" width="50"></a>
+          <font size="7" color="#">  
+              让我们一起互膜orz%%%
+          </font>        
+  </div>
+  <div class="topnav">
+      <a href="https://resolutely-resist-ccs-git-hub.github.io/about">关于此网站</a><a href="https://resolutely-resist-ccs-git-hub.github.io/my-website/page/">页面</a>
+  </div>
+  <h1 class="jz">hello，world！</h1>
+  <div class="jz">这是我的博客系统，此系统是我自己写的，本文章仅用于测试</div>
+  <div class="footer this-div">
+    stosto让我们一起互膜orzorz%%%
+  </div>
+</body>
+</html>

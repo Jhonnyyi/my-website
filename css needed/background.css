@@ -1,0 +1,11 @@
+.main {
+  margin-left: 60px;
+}
+.background {
+  background-color: aqua;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

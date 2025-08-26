@@ -1,0 +1,25 @@
+.color-mask-div {
+  background-image: -webkit-linear-gradient(
+    left,
+    #f10a0a,
+    #e6d205,
+    #24ee09,
+    #10e4f3,
+    #24ee09,
+    #e6d205
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-background-size: 200% 100%;
+  -webkit-animation: maskedAnimation 4s infinite linear;
+  font-size: 18px;
+}
+
+@keyframes maskedAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
